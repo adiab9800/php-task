@@ -17,7 +17,7 @@ class FrontController extends Controller
     }
     public function filter(Request $request)
     {
-        $courses = Course::
+        $courses = Course::where('is_active',true)->
         where(function ($q) use ($request) 
         {
             if($request->search)
